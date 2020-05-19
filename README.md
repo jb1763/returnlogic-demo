@@ -1,5 +1,5 @@
 # Demo
-The focus of this demo is in the [Custom Validations](https://github.com/jb1763/returnlogic-demo/blob/master/src/app/validation/custom.validation.ts) for Angular Reactive Forms
+The focus of this demo is in the [Custom Validations](https://github.com/jb1763/returnlogic-demo/blob/master/src/app/validation/custom.validation.ts) for Angular Reactive Forms and it's usage in [Home Component html](https://github.com/jb1763/returnlogic-demo/blob/master/src/app/home/home.component.html) and [Home Component ts](https://github.com/jb1763/returnlogic-demo/blob/master/src/app/home/home.component.ts)
 
 # ReturnlogicDemo
 
