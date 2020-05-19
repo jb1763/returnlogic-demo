@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
       Validators.pattern(CustomValidation.dateRegex),
       CustomValidation.dateBeforeValidator(new Date(Date.parse(this.basicInfo?.controls.birthDate?.value)), new Date(), 'dateBefore')
     ]);
+    this.basicInfo?.controls.birthDate.updateValueAndValidity();
   }
 
   submit(){

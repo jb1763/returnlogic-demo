@@ -33,7 +33,6 @@ export class CustomValidation {
       static dateBeforeValidator(input: Date, target: Date, errorName:string='dateBefore') : ValidatorFn {
         const validatingFunction = (input: Date, target: Date) => {
           console.log('input', input, 'target', target)
-          console.log(input < target)
           return input < target;
         }
         return this.functionBasedValidator(validatingFunction, [input, target], errorName);
