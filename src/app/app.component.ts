@@ -15,9 +15,11 @@ export class AppComponent {
   }
 
   configureSingleSignOn(){
+    /*
     this.oauthService.configure(authConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndLogin();
+    */
   }
 
   logout(){
@@ -25,7 +27,10 @@ export class AppComponent {
   }
 
   get token(){
+    return true;
+    /*
     let claims:any = this.oauthService.getIdentityClaims();
     return claims? claims : null;
+    */
   }
 }

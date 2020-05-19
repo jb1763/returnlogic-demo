@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; background-color: #CCC; }
+html, body { height: 100%; background-color: #CCC; padding:5px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.cardBackground {background-color: #FCFCFC;}
-.cardMargin {margin: 10px;}
+.cardBackground {background-color: #F9F9F9;}
+.cardMargin {margin: 10px; box-sizing: border-box;}
+.containerCard{background-color: #FAEEDC;}
+.formControl {margin: 0 15px;}

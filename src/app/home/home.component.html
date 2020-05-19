@@ -1,27 +1,74 @@
 <h1>Welcome to the demo</h1>
+<mat-card class="containerCard">
+    <form [style.padding]="'30px 5px'">
+        <mat-card [formGroup]="basicInfo" [style.display]="'inline-block'" class="cardBackground cardMargin">
+            <mat-card-title>Basic Info</mat-card-title>
+            <mat-card-content>
+                <mat-form-field class="formControl">
+                    <mat-label for="firstName">First Name</mat-label>
+                    <input matNativeControl id='firstName' formControlName="firstName" type='text' />
+                    <mat-error *ngIf="this.basicInfo?.controls.lastName?.errors?.required">
+                        You must enter a first name
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="formControl">
+                    <mat-label for="lastName">Last Name</mat-label>
+                    <input matNativeControl id='lastName' formControlName="lastName" type='text' />
+                    <mat-error *ngIf="this.basicInfo?.controls.lastName?.errors?.required">
+                        You must enter a last name
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="formControl">
+                    <mat-label for="birthDate">Date of Birth</mat-label>
+                    <input matNativeControl id='birthDate' (blur)="dateBlur()" formControlName="birthDate" type='text' />
+                    <mat-error *ngIf="this.basicInfo?.controls.birthDate?.errors?.required">
+                        You must enter a date of birth
+                    </mat-error>
+                    <mat-error *ngIf="!this.basicInfo?.controls.birthDate?.errors?.required
+                    && this.basicInfo?.controls.birthDate?.errors?.pattern">
+                        Must enter birth date in 'MM/DD/YYYY' format
+                    </mat-error>
+                    <mat-error *ngIf="!this.basicInfo?.controls.birthDate?.errors?.required 
+                    && !this.basicInfo?.controls.birthDate?.errors?.pattern
+                    && this.basicInfo?.controls.birthDate?.errors?.dateBefore">
+                        Sorry, no time travelers, Date of birth must be before today
+                    </mat-error>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
 
-<form [style.padding]="'5px'">
-    <mat-card class="cardBackground cardMargin">
-        <mat-card-title>Basic Info</mat-card-title>
-        <mat-card-content>
-        <mat-form-field>
-            <mat-label for="one">One</mat-label>
-            <input matNativeControl id='one' type='text' />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label for="two">Two</mat-label>
-            <input matNativeControl id='two' type='text' />
-        </mat-form-field>
-        <button mat-raised-button color="primary"> Submit </button>
-        </mat-card-content>
-    </mat-card>
-
-    <mat-card class="cardBackground cardMargin">
-        <mat-card-title>
-            Next info
-        </mat-card-title>
-        <mat-card-content>
-            Forms Here
-        </mat-card-content>
-    </mat-card>
-</form>
+        <mat-card [formGroup]="contactInfo" [style.display]="'inline-block'" class="cardBackground cardMargin">
+            <mat-card-title>
+                Contact
+            </mat-card-title>
+            <mat-card-content>
+                <mat-form-field class="formControl">
+                    <mat-label for="phone">Phone</mat-label>
+                    <input matNativeControl id="phone" formControlName="phone" type="text" />
+                    <mat-error *ngIf="this.contactInfo?.controls.phone?.errors?.required">
+                        You must enter a phone number
+                    </mat-error>
+                    <mat-error *ngIf="!this.contactInfo?.controls.phone?.errors?.required
+                    && this.contactInfo?.controls.phone?.errors?.pattern">
+                        Must enter a valid 10 digit phone number
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="formControl">
+                    <mat-label for="email">Email</mat-label>
+                    <input matNativeControl id="email" formControlName="email" type="text" />
+                    <mat-error *ngIf="this.contactInfo?.controls.email?.errors?.required">
+                        You must enter an email address
+                    </mat-error>
+                    <mat-error *ngIf="!this.contactInfo?.controls.email?.errors?.required
+                    && this.contactInfo?.controls.email?.errors?.pattern">
+                        Must enter birth date in 'example@example.com' format
+                    </mat-error>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+        <br />
+        <div>
+            <button mat-raised-button color="primary" class="formControl" (click)="submit()" [style.float]="'right'"> Submit </button>
+        </div>
+    </form>
+</mat-card>
