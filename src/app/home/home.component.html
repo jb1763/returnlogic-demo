@@ -1,3 +1,27 @@
 <h1>Welcome to the demo</h1>
 
-<p> The login was successful </p>
+<form [style.padding]="'5px'">
+    <mat-card class="cardBackground cardMargin">
+        <mat-card-title>Basic Info</mat-card-title>
+        <mat-card-content>
+        <mat-form-field>
+            <mat-label for="one">One</mat-label>
+            <input matNativeControl id='one' type='text' />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="two">Two</mat-label>
+            <input matNativeControl id='two' type='text' />
+        </mat-form-field>
+        <button mat-raised-button color="primary"> Submit </button>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="cardBackground cardMargin">
+        <mat-card-title>
+            Next info
+        </mat-card-title>
+        <mat-card-content>
+            Forms Here
+        </mat-card-content>
+    </mat-card>
+</form>
