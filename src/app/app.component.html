@@ -1,6 +1,6 @@
 <div>
-  <button mat-stroked-button color="basic" *ngIf="token" (click)="logout()" [style.float]="'right'"> Logout </button>
+  <button mat-stroked-button color="basic" (click)="logout()" [style.float]="'right'"> Logout </button>
 
 </div>
 
-<router-outlet *ngIf="token"></router-outlet>
+<router-outlet></router-outlet>
